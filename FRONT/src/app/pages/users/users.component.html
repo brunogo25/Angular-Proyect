@@ -1,0 +1,28 @@
+<div class="register">
+    <div class="register-clase">
+        <h1>REGISTER</h1>
+        <div class="register-clase-form">
+            <form [formGroup]="registerForm" (ngSubmit)="registrar()">
+                <div>
+                    <input type="text" placeholder="Name" formControlName="name" />
+                    <p *ngIf="(submited && registerForm?.get('name')?.hasError('required'))">Required</p>
+                </div>
+                <div>
+                    <input type="text" placeholder="Age" formControlName="age" />
+                    <p *ngIf="(submited && registerForm?.get('age')?.hasError('required'))">Required</p>
+                </div>
+                <div>
+                    <input type="email" placeholder="Email" formControlName="email" />
+                    <p *ngIf="(submited && registerForm?.get('email')?.hasError('required'))">Required</p>
+                    <p *ngIf="(submited && registerForm?.get('email')?.hasError('pattern'))">Invalid format</p>
+                </div>
+                <div>
+                    <input type="password" placeholder="Password" formControlName="password" />
+                    <p *ngIf="(submited && registerForm?.get('password')?.hasError('required'))">Required</p>
+                    <p *ngIf="(submited && registerForm?.get('password')?.hasError('pattern'))">Password must include; special character, a symbol and a capital letter</p>
+                </div>
+                <button>R3gist3r</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<nav class="nav">
+    <img class="nav-logo" src="https://cdn3.iconfinder.com/data/icons/digital-business-3/64/threat-anti-solve-block-hacker-512.png" alt="logo"/>
+    <div class="nav-buttons">
+    <button><a routerLink="/">Classes</a></button>
+    <button><a routerLink="/clases">HUB</a></button>
+    <button *ngIf="!api.getToken()"><a routerLink="/usuarios">Register</a></button>
+    <button *ngIf="!api.getToken()"><a routerLink="/login">Login</a></button>
+    <button *ngIf="api.getToken()" (click)="logout()"><a>LogOut</a></button>
+    </div>
+</nav>
